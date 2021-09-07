@@ -505,8 +505,14 @@ function get_inheritance() {
 function set_share(input, target) {
     $(target).parent().next().children("input").val(input);
 }
-function set_share_each(input, target) {
-    $(target).parent().next().next().children("input").val(input);
+function set_share_each(input, number, target) {
+    var share = input / number;
+    if (number != 0) {
+        $(target).parent().next().next().children("input").val(share);
+    }
+    else {
+        $(target).parent().next().next().children("input").val(0);
+    }
 }
 function max_value(max, target) {
     $(target).val(max);
@@ -973,9 +979,7 @@ function sons_share(update) {
         share = 0;
     }
     set_share(share, "#number-sons");
-    if (number_male != 0) {
-        set_share_each(share / number_male, "#number-sons");
-    }
+    set_share_each(share, number_male, "#number-sons");
 
     if (update == 'yes') {
         update_share("sons");
@@ -1002,9 +1006,7 @@ function daughters_share(update) {
         share = 0;
     }
     set_share(share, "#number-daughters");
-    if (number_female != 0) {
-        set_share_each(share / number_female, "#number-daughters");
-    }
+    set_share_each(share, number_female, "#number-daughters");
     
     if (update == 'yes') {
         update_share("daughters");
@@ -1034,9 +1036,7 @@ function grandsons_share(update) {
         share = 0;
     }
     set_share(share, "#number-grandsons");
-    if (number_male != 0) {
-        set_share_each(share / number_male, "#number-grandsons");
-    }
+    set_share_each(share, number_male, "#number-grandsons");
     
     if (update == 'yes') {
         update_share("grandsons");
@@ -1066,9 +1066,7 @@ function granddaughters_share(update) {
         share = 0;
     }
     set_share(share, "#number-granddaughters");
-    if (number_female != 0) {
-        set_share_each(share / number_female, "#number-granddaughters");
-    }
+    set_share_each(share, number_female, "#number-granddaughters");
     
     if (update == 'yes') {
         update_share("granddaughters");
@@ -1099,9 +1097,7 @@ function grandgrandsons_share(update) {
         share = 0;
     }
     set_share(share, "#number-grandgrandsons");
-    if (number_male != 0) {
-        set_share_each(share / number_male, "#number-grandgrandsons");
-    }
+    set_share_each(share, number_male, "#number-grandgrandsons");
     
     if (update == 'yes') {
         update_share("grandgrandsons");
@@ -1133,9 +1129,7 @@ function grandgranddaughters_share(update) {
         share = 0;
     }
     set_share(share, "#number-grandgranddaughters");
-    if (number_female != 0) {
-        set_share_each(share / number_female, "#number-grandgranddaughters");
-    }
+    set_share_each(share, number_female, "#number-grandgranddaughters");
     
     if (update == 'yes') {
         update_share("grandgranddaughters");
@@ -1284,12 +1278,8 @@ function halfbrothersisters_m_share(update) {
     }
     set_share(share_male, "#number-halfbrothers-m");
     set_share(share_female, "#number-halfsisters-m");
-    if (number_male != 0) {
-        set_share_each(share_male / number_male, "#number-halfbrothers-m");
-    }
-    if (number_female != 0) {
-        set_share_each(share_female / number_female, "#number-halfsisters-m");
-    }
+    set_share_each(share_male, number_male, "#number-halfbrothers-m");
+    set_share_each(share_female, number_female, "#number-halfsisters-m");
     
     if (update == 'yes') {
         update_share("halfbrothersisters-m");
@@ -1327,9 +1317,7 @@ function brothers_share(update) {
         share = 0;
     }
     set_share(share, "#number-brothers");
-    if (number_male != 0) {
-        set_share_each(share / number_male, "#number-brothers");
-    }
+    set_share_each(share, number_male, "#number-brothers");
     
     if (update == 'yes') {
         update_share("brothers");
@@ -1359,9 +1347,7 @@ function sisters_share(update) {
         share = 0;
     }
     set_share(share, "#number-sisters");
-    if (number_female != 0) {
-        set_share_each(share / number_female, "#number-sisters");
-    }
+    set_share_each(share, number_female, "#number-sisters");
     
     if (update == 'yes') {
         update_share("sisters");
@@ -1391,9 +1377,7 @@ function halfbrothers_f_share(update) {
         share = 0;
     }
     set_share(share, "#number-halfbrothers-f");
-    if (number_male != 0) {
-        set_share_each(share / number_male, "#number-halfbrothers-f");
-    }
+    set_share_each(share, number_male, "#number-halfbrothers-f");
     
     if (update == 'yes') {
         update_share("halfbrothers-f");
@@ -1423,9 +1407,7 @@ function halfsisters_f_share(update) {
         share = 0;
     }
     set_share(share, "#number-halfsisters-f");
-    if (number_female != 0) {
-        set_share_each(share / number_female, "#number-halfsisters-f");
-    }
+    set_share_each(share, number_female, "#number-halfsisters-f");
     
     if (update == 'yes') {
         update_share("halfsisters-f");
@@ -1825,9 +1807,7 @@ function wifes_share(update) {
         share = 0;
     }
     set_share(share, "#number-wifes");
-    if ($("#number-wifes").val() != 0) {
-        set_share_each(share / $("#number-wifes").val(), "#number-wifes");
-    }
+    set_share_each(share, $("#number-wifes").val(), "#number-wifes");
     
     if (update == 'yes') {
         update_share("wifes");
@@ -1861,9 +1841,7 @@ function nieces_share(update) {
         share = 0;
     }
     set_share(share, "#number-nieces");
-    if ($("#number-nieces").val() != 0) {
-        set_share_each(share / $("#number-nieces").val(), "#number-nieces");
-    }
+    set_share_each(share, $("#number-nieces").val(), "#number-nieces");
     
     if (update == 'yes') {
         update_share("nieces");
@@ -1894,9 +1872,7 @@ function halfnieces_share(update) {
         share = 0;
     }
     set_share(share, "#number-halfnieces");
-    if ($("#number-halfnieces").val() != 0) {
-        set_share_each(share / $("#number-halfnieces").val(), "#number-halfnieces");
-    }
+    set_share_each(share, $("#number-halfnieces").val(), "#number-halfnieces");
     
     if (update == 'yes') {
         update_share("halfnieces");
@@ -1931,9 +1907,7 @@ function uncles_share(update) {
         share = 0;
     }
     set_share(share, "#number-uncles");
-    if ($("#number-uncles").val() != 0) {
-        set_share_each(share / $("#number-uncles").val(), "#number-uncles");
-    }
+    set_share_each(share, $("#number-uncles").val(), "#number-uncles");
     
     if (update == 'yes') {
         update_share("uncles");
@@ -1966,9 +1940,7 @@ function halfuncles_share(update) {
         share = 0;
     }
     set_share(share, "#number-halfuncles");
-    if ($("#number-halfuncles").val() != 0) {
-        set_share_each(share / $("#number-halfuncles").val(), "#number-halfuncles");
-    }
+    set_share_each(share, $("#number-halfuncles").val(), "#number-halfuncles");
     
     if (update == 'yes') {
         update_share("halfuncles");
@@ -2002,9 +1974,7 @@ function cousins_share(update) {
         share = 0;
     }
     set_share(share, "#number-cousins");
-    if ($("#number-cousins").val() != 0) {
-        set_share_each(share / $("#number-cousins").val(), "#number-cousins");
-    }
+    set_share_each(share, $("#number-cousins").val(), "#number-cousins");
     
     if (update == 'yes') {
         update_share("cousins");
@@ -2039,9 +2009,7 @@ function halfcousins_share(update) {
         share = 0;
     }
     set_share(share, "#number-halfcousins");
-    if ($("#number-halfcousins").val() != 0) {
-        set_share_each(share / $("#number-halfcousins").val(), "#number-halfcousins");
-    }
+    set_share_each(share, $("#number-halfcousins").val(), "#number-halfcousins");
     
     if (update == 'yes') {
         update_share("halfcousins");

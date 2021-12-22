@@ -1,2 +1,2 @@
-# islamic-heritage-calculator
-Calculate the inheritance of the deceased person according to Islamic law.
+# HeirsScale
+A Calculator to calculate the inheritance of the deceased person according to Islamic law.

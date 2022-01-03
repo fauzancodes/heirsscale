@@ -1,5 +1,6 @@
 # HeirsScale
-A Calculator to calculate the inheritance of the deceased person according to Islamic law. HeirsScale is made with [HTML][1], [CSS][2], [Bootstrap][3], [SCSS][4], [Javascript][5] and [Jquery][6].
+
+**HeirsScale** is a **Calculator** to calculate the inheritance of the deceased person according to Islamic law. This Application is made with [HTML][1], [CSS][2], [Bootstrap][3], [SCSS][4], [Javascript][5] and [Jquery][6].
 
 ## How to Use
 go to https://the-spatializer.github.io/heirsscale/

@@ -4,7 +4,7 @@
 
 ## Why HeirsScale?
 - This application is web-based, so it can be opened **anywhere**, **anytime**, **no** need to **download** or **install**, and can be used on a **desktop** or **mobile**.
-- The calculation is carried out **directly**, once the number of heirs is determined, at that time the results of the distribution of the inheritance are determined
+- The calculation is carried out **directly**, once the number of heirs is determined, at that time the results of the distribution of the inheritance are determined.
 
 ## How to Use
 go to https://the-spatializer.github.io/heirsscale/

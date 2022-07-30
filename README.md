@@ -7,7 +7,7 @@
 - The calculation is carried out **directly**, once the number of heirs is determined, at that time the results of the distribution of the inheritance are determined.
 
 ## How to Use
-go to https://the-spatializer.github.io/heirsscale/
+go to https://mfznm-heirsscale.netlify.app
 
 [1]: https://www.w3schools.com/html/ "HTML"
 [2]: https://www.w3schools.com/css/ "CSS"
